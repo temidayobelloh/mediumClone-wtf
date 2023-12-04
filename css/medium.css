@@ -1,0 +1,28 @@
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 40px;
+    background-color:  #FFC117;
+}
+
+.navButton {
+   background-color: black; 
+   padding: 8px 16px;
+   color: white;
+   border-radius: 20px;
+   border: none;
+   cursor: pointer;
+}
+
+.modal {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.882);
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
