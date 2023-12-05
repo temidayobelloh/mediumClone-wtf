@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,14 +11,47 @@
   <link rel="stylesheet" href="../css/medium.css" />
   <title>Landing page</title>
 </head>
+
+
 <body>
 <nav class="nav">
   <h1>Medium</h1>
-  <button class="navButton">Get started</button>
+  <button id="openModalButton" class="navButton">Get started</button>
 </nav>
 
-<div class="modal">
-    This is our modal
+<div id="modal" class="modal">
+    <div id="modalContent" class="modalContent">
+      <h2 style="margin-bottom:10px">Join medium</h2>
+        <button class="navButton">
+          Sign up with Google
+        </button>
+    </div>
 </div>
+
+<div class="galleryWrapper">
+    <div class="actionsWrapper">
+      <form class="galleryForm">
+        <label for="imageName">Image Name</label>
+        <input id="imageName" name="imageName" />
+
+        <label for="imageLink">Image Link</label>
+        <input id="imageLink" name="imageLink" />
+        
+        <button class="navButton imgBtn"> Add image </button>
+      </form>
+      <div class="removeImageBtnWrapper">
+        <button class="navButton"> Remove Image</button>
+      </div>
+
+    </div>
+
+    <ul id="gallery" class="gallery">
+    </ul>
+</div>
+
+
+
+<script src="../javascript/index.js"></script>
+<script src="../javascript/gallery.js"></script>
 </body>
 </html>
