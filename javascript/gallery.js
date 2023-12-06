@@ -1,8 +1,7 @@
 const imageList = [
   {
     imageName: "Christmas car",
-    imageLink:
-      "https://images.pexels.com/photos/3444345/pexels-photo-3444345.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    imageLink: "../assets/image 3.png",
   },
   {
     imageName: "Christmas gift",
@@ -32,6 +31,9 @@ const imageList = [
 ];
 
 const gallery = document.getElementById("gallery");
+const galleryForm = document.querySelector("#galleryForm");
+const imageLinkInput = document.getElementById("imageLink");
+const imageNameInput = document.querySelector("#imageName");
 
 function fillGallery() {
   imageList.reverse().forEach((img) => {
@@ -48,5 +50,34 @@ function fillGallery() {
     gallery.appendChild(li);
   });
 }
+
+const addNewImage = () => {
+  const img = [...imageList].pop();
+  const li = document.createElement("li");
+  li.innerHTML = `  <div class="card" >
+  <aside class="imageWrapper">
+    <img src="${img.imageLink}" alt="image" />
+  </aside>
+  <span class="imageDetail">
+    ${img.imageName}
+  </span>
+</div>`;
+  gallery.prepend(li);
+}
+
+
+galleryForm.addEventListener('submit',  (event) => {
+  event.preventDefault();
+  const imageNameValue = imageNameInput.value;
+  const imageLinkValue = imageLinkInput.value;
+  const imgObj = {
+    imageName: imageNameValue,
+    imageLink: imageLinkValue,
+  }
+
+  imageList.push(imgObj)
+  addNewImage()
+})
+
 
 fillGallery();
