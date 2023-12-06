@@ -52,7 +52,7 @@ function fillGallery() {
 }
 
 const addNewImage = () => {
-  const img = [...imageList].pop();
+  const img = [].concat(imageList).pop();
   const li = document.createElement("li");
   li.innerHTML = `  <div class="card" >
   <aside class="imageWrapper">
