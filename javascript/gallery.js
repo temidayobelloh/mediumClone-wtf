@@ -79,5 +79,23 @@ galleryForm.addEventListener('submit',  (event) => {
   addNewImage()
 })
 
+removeBtn.addEventListener("click", () => {
+  removeLastImage();
+});
+
+function removeLastImage() {
+  if (imageList.length > 0) {
+    imageList.pop(); // Remove the last image from the array
+    updateGallery();
+  }
+}
+function updateGallery() {
+  // Clear the current gallery
+  gallery.innerHTML = "";
+  // Fill the gallery with the updated imageList
+  fillGallery();
+}
+
 
 fillGallery();
+
